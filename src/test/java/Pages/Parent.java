@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class Parent {
 
-    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
+  public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
 
     public void sendKeysFunction(WebElement element, String value) {
         waitUntilVisible(element);

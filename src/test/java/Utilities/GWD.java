@@ -15,6 +15,7 @@ public class GWD {
 
     public static WebDriver getDriver() {
 
+
         Logger.getLogger("").setLevel(Level.SEVERE);
         System.setProperty(org.slf4j.simple.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 

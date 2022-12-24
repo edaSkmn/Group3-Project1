@@ -1,7 +1,9 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -44,6 +46,31 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()=' Delete ']")
     private WebElement deleteDialogBtn;
 
+    @FindBy(xpath ="//div[contains(text(),'successfully')]")
+    private WebElement successMessageHB;
+
+
+    @FindBy(xpath ="//div[contains(text(),'already exists')]")
+    private WebElement alreadyExistHB;
+
+    @FindBy(xpath ="//ms-text-field[@formcontrolname='name']//input")
+    private WebElement nameInputHB;
+
+    @FindBy(xpath ="(//ms-text-field//input)[4]")
+    private WebElement codeInputHB;
+
+    @FindBy(xpath ="//ms-add-button//button")
+    private WebElement addButtonHB;
+
+    @FindBy(xpath ="(//ms-text-field//input)[1]")
+    private WebElement searchNameHB;
+
+    @FindBy(xpath ="(//mat-select/div)[3]/div/span")
+    private WebElement stageHB;
+    @FindBy(xpath ="//span[text()=' Employment ']")
+    private WebElement employmentHB;
+    @FindBy(xpath ="(//div[@class='cdk-overlay-pane'])[2]")
+    private WebElement certificateHB;
     WebElement myElement;
     public void findAndSend(String strElement, String value) {
 
@@ -51,6 +78,9 @@ public class DialogContent extends Parent {
 
             case "username": myElement = username;break;
             case "password": myElement = password;break;
+            case "nameInputHB": myElement = nameInputHB;break;
+            case "codeInputHB": myElement = codeInputHB;break;
+            case "searchNameHB": myElement = searchNameHB;break;
 
         }
         sendKeysFunction(myElement, value);
@@ -68,6 +98,10 @@ public class DialogContent extends Parent {
             case "deleteDialogBtn": myElement = deleteDialogBtn;break;
             case "saveButton": myElement = saveButton;break;
             case "editButton": myElement = editButton;break;
+            case "addButtonHB": myElement = addButtonHB;break;
+            case "stageHB": myElement = stageHB;break;
+            case "employmentHB": myElement = employmentHB;break;
+            case "certificateHB": myElement = certificateHB;break;
 
         }
         clickFunction(myElement);
@@ -78,11 +112,36 @@ public class DialogContent extends Parent {
         switch (strElement) {
 
             case "txtTechnoStudy": myElement = txtTechnoStudy;break;
+            case "successMessageHB": myElement = successMessageHB;break;
+            case "alreadyExistHB": myElement = alreadyExistHB;break;
 
         }
         verifyContainsTextFunction(myElement, text);
     }
     public void findAndDelete(String searchText) {
+    }
+    public void findAndDeleteHB(String searchName) {
+
+        findAndSend("searchNameHB",searchName);
+        findAndClick("searchButton");
+        waitUntilLoading();
+        findAndClick("deleteButton");
+        findAndClick("deleteDialogBtn");
+
 
     }
+    public void findAndEditHB( String name){
+
+        waitUntilLoading();
+        findAndClick("editButton");
+        waitUntilVisible(nameInputHB);
+        nameInputHB.clear();
+        findAndSend("nameInputHB",name);
+        findAndClick("saveButton");
+
+
+    }
+
+
+
 }
