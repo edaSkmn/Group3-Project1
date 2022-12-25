@@ -71,6 +71,26 @@ public class DialogContent extends Parent {
     private WebElement employmentHB;
     @FindBy(xpath ="(//div[@class='cdk-overlay-pane'])[2]")
     private WebElement certificateHB;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
+    private WebElement nameEs;
+
+    @FindBy(css = "[data-placeholder='IBAN']")
+    private WebElement ibanEs;
+
+    @FindBy(xpath = "(//mat-select[@role='combobox']//div//div)[7]")
+    private WebElement currencyEs;
+
+    @FindBy(xpath = "(//*[@class='mat-option-text'])[4]")
+    private WebElement currencyTRYEs;
+
+    @FindBy(xpath ="//ms-text-field[@formcontrolname='integrationCode']//input")
+    private WebElement integrationCodeEs;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    private WebElement successMessage;
+
+
     WebElement myElement;
     public void findAndSend(String strElement, String value) {
 
@@ -81,6 +101,9 @@ public class DialogContent extends Parent {
             case "nameInputHB": myElement = nameInputHB;break;
             case "codeInputHB": myElement = codeInputHB;break;
             case "searchNameHB": myElement = searchNameHB;break;
+            case "nameEs": myElement = nameEs;break;
+            case "ibanEs": myElement = ibanEs;break;
+            case "integrationCodeEs": myElement = integrationCodeEs;break;
 
         }
         sendKeysFunction(myElement, value);
@@ -102,6 +125,8 @@ public class DialogContent extends Parent {
             case "stageHB": myElement = stageHB;break;
             case "employmentHB": myElement = employmentHB;break;
             case "certificateHB": myElement = certificateHB;break;
+            case "currencyEs": myElement = currencyEs;break;
+            case "currencyTRYEs": myElement = currencyTRYEs;break;
 
         }
         clickFunction(myElement);
@@ -114,6 +139,8 @@ public class DialogContent extends Parent {
             case "txtTechnoStudy": myElement = txtTechnoStudy;break;
             case "successMessageHB": myElement = successMessageHB;break;
             case "alreadyExistHB": myElement = alreadyExistHB;break;
+            case "successMessage": myElement = successMessage;break;
+
 
         }
         verifyContainsTextFunction(myElement, text);
