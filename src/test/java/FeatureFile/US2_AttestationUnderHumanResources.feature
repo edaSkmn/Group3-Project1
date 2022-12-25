@@ -1,33 +1,29 @@
-Feature: Bank Account Functionality
+Feature: Attestation Functionality
 
   Background:
     Given Navigate to Campus
     When Enter username and password and click Login button
     Then User should login successfully
     And Click on the element in left nav
-      | setUpOne       |
-      | parameters     |
-      | bankAccountsEs |
+      | humanResources |
+      | setUpThreeEs       |
+      | attestationsEs |
 
-  Scenario: Create Bank Account
+  Scenario: Create Attestation
     And Click on the element in the Dialog
       | addButton |
 
     And User sends the keys in Bank Accounts
-      | nameEs            | sam                         |
-      | ibanEs            | TR12 1234 5555 6666 7777 89 |
-      | integrationCodeEs | xywz                        |
+      | nameEs | john |
 
     And Click on the element in the Dialog
-      | currencyEs    |
-      | currencyTRYEs |
-      | saveButton    |
+      | saveButton |
 
     Then Success Message should be displayed
 
-  Scenario: Edit Bank Account
+  Scenario: Edit Attestation
     And User search item from Dialog
-      | searchNameHB | sam |
+      | searchNameHB | john |
 
     And Click on the element in the Dialog
       | searchButton |
@@ -36,16 +32,16 @@ Feature: Bank Account Functionality
       | editButton |
 
     And User sends the keys in Bank Accounts
-      | nameEs | sam edit |
+      | nameEs | john edit |
 
     And Click on the element in the Dialog
       | saveButton |
 
     Then Success Message should be displayed
 
-  Scenario: Delete Bank Account
+  Scenario: Delete Attestation
     And User search item from Dialog
-      | searchNameHB | sam edit|
+      | searchNameHB | john edit |
 
     And Click on the element in the Dialog
       | searchButton |
@@ -57,6 +53,3 @@ Feature: Bank Account Functionality
       | deleteDialogBtn |
 
     Then Success Message should be displayed
-
-
-

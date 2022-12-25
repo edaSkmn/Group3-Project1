@@ -36,7 +36,4 @@ public class US3_4DataTableFieldsAndDTypes {
             dc.findAndSend(listElemanlar.get(i).get(0), listElemanlar.get(i).get(1));
         }
     }
-
-
-
 }

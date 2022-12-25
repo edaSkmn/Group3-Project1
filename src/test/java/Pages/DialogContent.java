@@ -87,10 +87,6 @@ public class DialogContent extends Parent {
     @FindBy(xpath ="//ms-text-field[@formcontrolname='integrationCode']//input")
     private WebElement integrationCodeEs;
 
-    @FindBy(xpath = "//div[contains(text(),'successfully')]")
-    private WebElement successMessage;
-
-
     WebElement myElement;
     public void findAndSend(String strElement, String value) {
 
@@ -139,9 +135,6 @@ public class DialogContent extends Parent {
             case "txtTechnoStudy": myElement = txtTechnoStudy;break;
             case "successMessageHB": myElement = successMessageHB;break;
             case "alreadyExistHB": myElement = alreadyExistHB;break;
-            case "successMessage": myElement = successMessage;break;
-
-
         }
         verifyContainsTextFunction(myElement, text);
     }
@@ -165,10 +158,6 @@ public class DialogContent extends Parent {
         nameInputHB.clear();
         findAndSend("nameInputHB",name);
         findAndClick("saveButton");
-
-
     }
-
-
 
 }
