@@ -87,6 +87,28 @@ public class DialogContent extends Parent {
     @FindBy(xpath ="//ms-text-field[@formcontrolname='integrationCode']//input")
     private WebElement integrationCodeEs;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
+    private WebElement nameInputN;
+    @FindBy(xpath ="//div[contains(text(),'successfully')]")
+    private WebElement successMessageN;
+    @FindBy(xpath ="//div[contains(text(),'already exists')]")
+    private WebElement alreadyExistN;
+    @FindBy(xpath ="(//ms-text-field//input)[1]")
+    private WebElement searchNameInputN;
+    @FindBy(xpath = "(//ms-dialog-content//input)[1]")
+    private WebElement editInputN;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='description']//input")
+    private WebElement descriptionInputN;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
+    private WebElement integrationCodeInputN;
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']/input")
+    private WebElement priorityCodeN;
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']")
+    private WebElement toggleBarN;
+    @FindBy(xpath = "//ms-text-field[@placeholder='DISCOUNT.TITLE.DESCRIPTION']//input")
+    private WebElement searchDescriptionInputN;
+
+
     WebElement myElement;
     public void findAndSend(String strElement, String value) {
 
@@ -100,6 +122,14 @@ public class DialogContent extends Parent {
             case "nameEs": myElement = nameEs;break;
             case "ibanEs": myElement = ibanEs;break;
             case "integrationCodeEs": myElement = integrationCodeEs;break;
+            case "nameInputN": myElement = nameInputN;break;
+            case "searchNameInputN": myElement = searchNameInputN;break;
+            case "editInputN": myElement = editInputN;break;
+            case "descriptionInputN": myElement = descriptionInputN;break;
+            case "integrationCodeInputN": myElement = integrationCodeInputN;break;
+            case "priorityCodeN": myElement = priorityCodeN;break;
+            case "searchDescriptionInputN": myElement = searchDescriptionInputN;break;
+
 
         }
         sendKeysFunction(myElement, value);
@@ -123,6 +153,7 @@ public class DialogContent extends Parent {
             case "certificateHB": myElement = certificateHB;break;
             case "currencyEs": myElement = currencyEs;break;
             case "currencyTRYEs": myElement = currencyTRYEs;break;
+            case "toggleBarN": myElement = toggleBarN;break;
 
         }
         clickFunction(myElement);
@@ -135,6 +166,7 @@ public class DialogContent extends Parent {
             case "txtTechnoStudy": myElement = txtTechnoStudy;break;
             case "successMessageHB": myElement = successMessageHB;break;
             case "alreadyExistHB": myElement = alreadyExistHB;break;
+
         }
         verifyContainsTextFunction(myElement, text);
     }
@@ -158,6 +190,26 @@ public class DialogContent extends Parent {
         nameInputHB.clear();
         findAndSend("nameInputHB",name);
         findAndClick("saveButton");
+    }
+
+    public void findAndDeleteN(String searchText) {
+        findAndSend("searchNameInputN", searchText);
+        findAndClick("searchButton");
+        waitUntilLoading();
+        findAndClick("deleteButton");
+        findAndClick("deleteDialogBtn");
+
+    }
+
+
+    public void findAndEditN(String name) {
+        waitUntilLoading();
+        findAndClick("editButton");
+        waitUntilVisible(editInputN);
+        editInputN.clear();
+        findAndSend("editInputN",name);
+        findAndClick("saveButton");
+
     }
 
 }
