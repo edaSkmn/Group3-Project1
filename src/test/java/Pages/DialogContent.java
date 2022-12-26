@@ -108,6 +108,15 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@placeholder='DISCOUNT.TITLE.DESCRIPTION']//input")
     private WebElement searchDescriptionInputN;
 
+    @FindBy(xpath = "//mat-form-field//input[@data-placeholder='Name']")
+    private WebElement searchInput_VA;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
+    private WebElement nameInput_VA;
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    private WebElement successMessage_VA;
+    @FindBy(xpath = "//input[@id='ms-text-field-1']")
+    private WebElement codeInput_VA;
+
 
     WebElement myElement;
     public void findAndSend(String strElement, String value) {
@@ -129,6 +138,10 @@ public class DialogContent extends Parent {
             case "integrationCodeInputN": myElement = integrationCodeInputN;break;
             case "priorityCodeN": myElement = priorityCodeN;break;
             case "searchDescriptionInputN": myElement = searchDescriptionInputN;break;
+            case "searchInput_VA": myElement = searchInput_VA;break;
+            case "nameInput_VA": myElement = nameInput_VA;break;
+            case "codeInput_VA": myElement = codeInput_VA;break;
+
 
 
         }
@@ -155,6 +168,7 @@ public class DialogContent extends Parent {
             case "currencyTRYEs": myElement = currencyTRYEs;break;
             case "toggleBarN": myElement = toggleBarN;break;
 
+
         }
         clickFunction(myElement);
     }
@@ -166,6 +180,7 @@ public class DialogContent extends Parent {
             case "txtTechnoStudy": myElement = txtTechnoStudy;break;
             case "successMessageHB": myElement = successMessageHB;break;
             case "alreadyExistHB": myElement = alreadyExistHB;break;
+            case "successMessage_VA": myElement = successMessage_VA;break;
 
         }
         verifyContainsTextFunction(myElement, text);
