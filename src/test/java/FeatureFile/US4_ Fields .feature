@@ -1,12 +1,14 @@
 Feature:Add-Edit-Delete Fields under Parameters Setup
-Background:
-  Given Navigate to Campus
-  When Enter username and password and click Login button
-  Then User should login successfully
-  And Click  on the element in LeftNav
-    | setUpOne    |
-    | parameters  |
-    | fieldsOneHB |
+
+  Background:
+    Given Navigate to Campus
+    When Enter username and password and click Login button
+    Then User should login successfully
+    And Click  on the element in LeftNav
+      | setUpOne    |
+      | parameters  |
+      | fieldsOneHB |
+
 
   Scenario Outline:User should be able to Add Fields
 
@@ -19,7 +21,7 @@ Background:
     Then Already exist message should be displayed
 
     Examples:
-      | Name | Code    |
+      | Name     | Code    |
       | suleyman | 456yhbn |
 
 
@@ -34,7 +36,7 @@ Background:
     Then Success Message should be displayed
 
     Examples:
-      | Name      |
+      | Name          |
       | suleyman yeni |
 
   Scenario Outline: User should be able to Delete Fields
@@ -48,5 +50,5 @@ Background:
     When user delete name as "<Name>"
     Then Success Message should be displayed
     Examples:
-      | Name      |
+      | Name          |
       | suleyman yeni |
