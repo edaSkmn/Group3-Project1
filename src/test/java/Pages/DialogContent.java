@@ -117,6 +117,24 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//input[@id='ms-text-field-1']")
     private WebElement codeInput_VA;
 
+    @FindBy(xpath ="(//ms-text-field//input)[2]")
+    private WebElement codeInputAT;
+
+    @FindBy(xpath ="(//input[@aria-required='true'])[3]")
+    private WebElement capasityAT;
+
+    @FindBy(xpath ="//span[text()=' Laboratory ']")
+    private WebElement lacotiontypeAT2;
+
+    @FindBy(xpath ="(//mat-select//div//div)[4]")
+    private WebElement lacotiontypeAT1;
+
+    @FindBy(xpath ="(//div[@role='listbox']//mat-option)[3]")
+    private WebElement NextGradeAT;
+
+
+    @FindBy(xpath = "(//ms-delete-button//button)[2]")
+    private WebElement deleteButtonAT;
 
     WebElement myElement;
     public void findAndSend(String strElement, String value) {
@@ -141,8 +159,8 @@ public class DialogContent extends Parent {
             case "searchInput_VA": myElement = searchInput_VA;break;
             case "nameInput_VA": myElement = nameInput_VA;break;
             case "codeInput_VA": myElement = codeInput_VA;break;
-
-
+            case "codeInputAT": myElement = codeInputAT;break;
+            case "capasityAT": myElement = capasityAT;break;
 
         }
         sendKeysFunction(myElement, value);
@@ -167,6 +185,10 @@ public class DialogContent extends Parent {
             case "currencyEs": myElement = currencyEs;break;
             case "currencyTRYEs": myElement = currencyTRYEs;break;
             case "toggleBarN": myElement = toggleBarN;break;
+            case "lacotiontypeAT2": myElement = lacotiontypeAT2;break;
+            case "lacotiontypeAT1": myElement = lacotiontypeAT1;break;
+            case "NextGradeAT": myElement = NextGradeAT;break;
+            case "deleteButtonAT": myElement = deleteButtonAT;break;
 
 
         }
