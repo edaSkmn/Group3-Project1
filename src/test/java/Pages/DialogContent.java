@@ -132,9 +132,25 @@ public class DialogContent extends Parent {
     @FindBy(xpath ="(//div[@role='listbox']//mat-option)[3]")
     private WebElement NextGradeAT;
 
-
     @FindBy(xpath = "(//ms-delete-button//button)[2]")
     private WebElement deleteButtonAT;
+
+    @FindBy(xpath = "(//ms-text-field//input)[2]")
+    private WebElement searchShortNameInputF;
+
+    @FindBy(xpath ="(//ms-text-field//input)[1]")
+    private WebElement searchNameInputF;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
+    private WebElement nameInputF;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
+    private WebElement shortNameInputF;
+    @FindBy(xpath = "(//ms-text-field//input)[2]")
+    private WebElement searchCodeInputF;
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
+    private WebElement CodeInputF;
+    //ms-text-field[@formcontrolname='code']//input
+
 
     WebElement myElement;
     public void findAndSend(String strElement, String value) {
@@ -161,6 +177,11 @@ public class DialogContent extends Parent {
             case "codeInput_VA": myElement = codeInput_VA;break;
             case "codeInputAT": myElement = codeInputAT;break;
             case "capasityAT": myElement = capasityAT;break;
+            case "nameInputF": myElement = nameInputF;break;
+            case "shortNameInputF": myElement = shortNameInputF;break;
+            case "searchShortNameInputF": myElement = searchShortNameInputF;break;
+            case "searchNameInputF": myElement = searchNameInputF;break;
+            case "CodeInputF": myElement = CodeInputF;break;
 
         }
         sendKeysFunction(myElement, value);
@@ -246,6 +267,46 @@ public class DialogContent extends Parent {
         editInputN.clear();
         findAndSend("editInputN",name);
         findAndClick("saveButton");
+
+    }
+
+    public void findAndEditnameF(String name) {
+        waitUntilLoading();
+        findAndClick("editButton");
+        waitUntilVisible(nameInputF);
+        nameInputF.clear();
+        findAndSend("nameInputF",name);
+        findAndClick("saveButton");
+
+
+
+    }
+    public void findAndEditshortnameF(String shortName) {
+        waitUntilLoading();
+
+        waitUntilVisible(shortNameInputF);
+        shortNameInputF.clear();
+        findAndSend("shortNameInputF",shortName);
+        findAndClick("saveButton");
+
+    }
+    public void findAndDeleteF(String searchText) {
+        findAndSend("searchNameInputF", searchText);
+        /*findAndSend("searchShortNameInputF", searchText);*/
+        findAndClick("searchButton");
+        waitUntilLoading();
+        findAndClick("deleteButton");
+        findAndClick("deleteDialogBtn");
+
+    }
+    public void findAndEditCodeF(String name) {
+        waitUntilLoading();
+        findAndClick("editButton");
+        waitUntilVisible(CodeInputF);
+        CodeInputF.clear();
+        findAndSend("CodeInputF",name);
+
+
 
     }
 

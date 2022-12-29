@@ -56,7 +56,7 @@ public class US1and11_DataTableSteps {
         List<String> listElemanlar= elemanlar.asList(String.class);
 
         for(String strButtonName : listElemanlar)
-            dc.findAndEditN(strButtonName);
+        dc.findAndEditN(strButtonName);
     }
 
 }
