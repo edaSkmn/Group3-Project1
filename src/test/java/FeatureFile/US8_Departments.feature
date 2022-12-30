@@ -9,6 +9,7 @@ Feature: Departments Functionality
       | schoolSetup |
       | departments |
 
+  @Regression
   Scenario Outline: Create  Departments
     When : user Fields  name as "<Name>"  Code as "<Code>"
     Then Success Message should be displayed
@@ -16,6 +17,7 @@ Feature: Departments Functionality
       | Name    | Code |
       | Group_3 | US_8 |
 
+  @Regression
   Scenario Outline: User should be able to edit Departments
     When : User Fields  name as "<name>"  as Edit Nationalities
     Then Success message should be displayed
@@ -23,6 +25,7 @@ Feature: Departments Functionality
       | name |
       | US_8 |
 
+  @Regression
   Scenario Outline:  User should be able to Delete Departments
     When User Delete name as "<name>"
     Then Success message should be displayed

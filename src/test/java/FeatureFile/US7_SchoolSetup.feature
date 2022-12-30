@@ -9,10 +9,8 @@ Feature: Locations Add,Edit,Delete
       | SchoolSetupAT |
       | LocationsAT   |
 
-
+  @Regression
   Scenario Outline:  User should be able to Add Locations
-
-
     And Click on the element in the Dialog
       | addButton |
 
@@ -29,10 +27,8 @@ Feature: Locations Add,Edit,Delete
       | Name  | ShortName  |   capasity    |
       | M.Ali |  G.O.A.T   |      96       |
 
-
+  @Regression
   Scenario Outline:  User should be able to Add Locations
-
-
     And Click on the element in the Dialog
       | editButton |
 
@@ -45,17 +41,15 @@ Feature: Locations Add,Edit,Delete
 
     Then Success Message should be displayed
 
-
     Examples:
       | Name  | ShortName  |   capasity    |
       | M.Ali |  G.O.A.T   |      100      |
 
-
+  @Regression
   Scenario:  User should be able to delete
-
-
     And Click on the element in the Dialog
       | deleteButton    |
+
     And Click on the element in the Dialog
       | deleteDialogBtn |
 

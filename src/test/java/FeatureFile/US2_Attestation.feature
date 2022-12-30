@@ -6,9 +6,10 @@ Feature: Attestation Functionality
     Then User should login successfully
     And Click on the element in left nav
       | humanResources |
-      | setUpThreeEs       |
+      | setUpThreeEs   |
       | attestationsEs |
 
+  @Regression
   Scenario: Create Attestation
     And Click on the element in the Dialog
       | addButton |
@@ -21,6 +22,7 @@ Feature: Attestation Functionality
 
     Then Success Message should be displayed
 
+  @Regression
   Scenario: Edit Attestation
     And User search item from Dialog
       | searchNameHB | john |
@@ -39,6 +41,7 @@ Feature: Attestation Functionality
 
     Then Success Message should be displayed
 
+  @Regression
   Scenario: Delete Attestation
     And User search item from Dialog
       | searchNameHB | john edit |

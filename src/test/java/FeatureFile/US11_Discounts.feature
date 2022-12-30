@@ -8,9 +8,8 @@ Feature: Add-Edit-Delete Discounts
       | setUpOne   |
       | parameters |
       | discountsN |
-
+  @Regression
   Scenario Outline:User should be able to Add Discounts
-
     And Click on the element in the Dialog
       | addButton |
 
@@ -43,6 +42,7 @@ Feature: Add-Edit-Delete Discounts
       | description     | code  | priority |
       | Group_3 Project | 98756 | 14789    |
 
+  @Regression
   Scenario Outline:User should be able to Edit Discounts
     And User sending the keys in Dialog content
       | searchDescriptionInputN | <description> |
@@ -59,6 +59,7 @@ Feature: Add-Edit-Delete Discounts
       | description     | description1        |
       | Group_3 Project | Group_3 Project New |
 
+  @Regression
   Scenario Outline:User should be able to Delete Discounts
     And User sending the keys in Dialog content
       | searchDescriptionInputN | <description> |

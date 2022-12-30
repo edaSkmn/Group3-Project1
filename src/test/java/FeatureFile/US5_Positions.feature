@@ -5,28 +5,29 @@ Feature: Add-Edit-Delete Positions
     When Enter username and password and click Login button
     Then User should login successfully
     And Click on the element in the left nav
-      | humanResources      |
-      | setUpThreeF         |
-      | positionsF |
+      | humanResources |
+      | setUpThreeF    |
+      | positionsF     |
 
+  @Regression
   Scenario Outline:User should be able to Add Positions
     And Click on the element in the Dialog
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInputF | <name> |
+      | nameInputF      | <name>      |
       | shortNameInputF | <shortName> |
 
     And Click on the element in the dialog content
       | saveButton |
 
-   Then Success Message should be displayed
+    Then Success Message should be displayed
 
     And Click on the element in the dialog content
       | addButton |
 
     And User sending the keys in Dialog content
-      | nameInputN | <name> |
+      | nameInputN      | <name>      |
       | shortNameInputF | <shortName> |
 
     And Click on the element in the dialog content
@@ -35,19 +36,16 @@ Feature: Add-Edit-Delete Positions
     Then Already exist message should be displayed
 
     Examples:
-      | name     | shortName |
-      | felat | group3.|
+      | name  | shortName |
+      | felat | group3.   |
 
-
+  @Regression
   Scenario Outline:User should be able to Edit Positions
     And User sending the keys in Dialog content
       | searchNameInputF | <name> |
-     # | searchShortNameInputF | <shortName> |
 
     And Click on the element in the dialog content
       | searchButton |
-
-
 
     And User  should edit item in the name Dialog
       | <name1> |
@@ -55,21 +53,13 @@ Feature: Add-Edit-Delete Positions
     Then Success Message should be displayed
 
     Examples:
-      | name     | name1       |
+      | name  | name1     |
+      | felat | felatyeni |
 
-
-      | felat  | felatyeni |
-
-
-
-
+  @Regression
   Scenario Outline:User should be able to Delete Positions
     And User sending the keys in Dialog content
-
-      | searchNameInputF |<name> |
-
-
-
+      | searchNameInputF | <name> |
 
     And Click on the element in the dialog content
       | searchButton |
@@ -77,9 +67,8 @@ Feature: Add-Edit-Delete Positions
     And User delete items from Dialog
       | <name> |
 
-
     Then Success Message should be displayed
 
     Examples:
-      | name        |
-      |  felatyeni  |
+      | name      |
+      | felatyeni |

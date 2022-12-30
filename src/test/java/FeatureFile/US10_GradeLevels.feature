@@ -5,14 +5,12 @@ Feature: Grade Levels Add,Edit,Delete
     When Enter username and password and click Login button
     Then User should login successfully
     And Click  on the element in LeftNav
-      | setUpOne        |
-      | parameters      |
-      | GradeLevelsAT   |
+      | setUpOne      |
+      | parameters    |
+      | GradeLevelsAT |
 
-
+  @Regression
   Scenario Outline:  User should be able to Add Locations
-
-
     And Click on the element in the Dialog
       | addButton |
 
@@ -24,12 +22,11 @@ Feature: Grade Levels Add,Edit,Delete
     Then Success Message should be displayed
 
     Examples:
-      | Name    | ShortName   |      order     |
-      | ahmet   |  Iron Mike  |      240       |
+      | Name  | ShortName | order |
+      | ahmet | Iron Mike | 240   |
 
+  @Regression
   Scenario Outline:  User should be able to edit
-
-
     And Click on the element in the Dialog
       | editButton |
 
@@ -41,14 +38,13 @@ Feature: Grade Levels Add,Edit,Delete
     Then Success Message should be displayed
 
     Examples:
-      | Name       | ShortName    |    order    |
-      | ABCCDEF    |   dysvgbn   |     160       |
+      | Name    | ShortName | order |
+      | ABCCDEF | dysvgbn   | 160   |
 
+  @Regression
   Scenario:  User should be able to Add Locations
-
-
     And Click on the element in the Dialog
-      | deleteButtonAT    |
+      | deleteButtonAT  |
       | deleteDialogBtn |
 
     Then Success Message should be displayed

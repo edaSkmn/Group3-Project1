@@ -6,13 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class US_12_Steps {
-    LeftNav ln = new LeftNav();
 
+    LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
 
     @When(":User Nationalities name as {string} as add")
     public void userNationalitiesNameAsAsAdd(String name) {
-
         dc.findAndClick("addButton");
         dc.findAndSend("nameInput_VA", name);
         dc.findAndClick("saveButton");
@@ -37,7 +36,5 @@ public class US_12_Steps {
         dc.findAndClick("deleteButton");
         dc.findAndClick("deleteDialogBtn");
     }
-
-
 }
 

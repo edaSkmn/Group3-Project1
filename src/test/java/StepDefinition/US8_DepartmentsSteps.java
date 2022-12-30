@@ -13,13 +13,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class US8_DepartmentsSteps {
-    LeftNav ln = new LeftNav();
 
+    LeftNav ln = new LeftNav();
     DialogContent dc = new DialogContent();
 
     @When(": user Fields  name as {string}  Code as {string}")
     public void userFieldsNameAsCodeAs(String name, String code) {
-
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("fuse-progress-bar > *"), 0));
         dc.findAndClick("addButton");
@@ -32,7 +31,6 @@ public class US8_DepartmentsSteps {
 
     @When("User Delete name as {string}")
     public void userDeleteNameAs(String name) {
-
         dc.findAndClick("deleteButton");
         dc.findAndClick("deleteDialogBtn");
     }

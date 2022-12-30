@@ -10,37 +10,34 @@ Background:
     | parameters      |
     | documentTypesHB |
 
+  @Regression
   Scenario Outline:  User should be able to Add document types
-
-
     When :User Document types  name as "<Name>" as add
 
     Then Success Message should be displayed
-
-#   When :User Document types  name as "<Name>" as add
-#   Then Already exist message should be displayed
 
     Examples:
       | Name  |
       | emine |
 
-
+  @Regression
   Scenario Outline: User should be able to edit document types
 
     And User  sending the keys ibn the Dialog Content
       | searchNameHB | emine |
+
     And Click  on the element in the Dialog Content
       | searchButton |
 
-
     When : User Fields  name as "<Name>"  as Edit
+
     Then Success Message should be displayed
 
     Examples:
       | Name |
       | esra |
 
-
+  @Regression
   Scenario Outline: User should be able to Delete document types
 
     And User  sending the keys ibn the Dialog Content
@@ -50,7 +47,9 @@ Background:
       | searchButton |
 
     When user delete name as "<Name>"
+
     Then Success Message should be displayed
+
     Examples:
       | Name |
       | esra |

@@ -12,12 +12,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Hooks {
-
     @Before
     public void before() {
         System.out.println("Senaryo basladi");
     }
-
 
     @After
     public void after(Scenario senaryo) {

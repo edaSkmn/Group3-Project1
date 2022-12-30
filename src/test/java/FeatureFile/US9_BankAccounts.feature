@@ -8,7 +8,7 @@ Feature: Bank Account Functionality
       | setUpOne       |
       | parameters     |
       | bankAccountsEs |
-
+  @Regression
   Scenario: Create Bank Account
     And Click on the element in the Dialog
       | addButton |
@@ -24,7 +24,7 @@ Feature: Bank Account Functionality
       | saveButton    |
 
     Then Success Message should be displayed
-
+  @Regression
   Scenario: Edit Bank Account
     And User search item from Dialog
       | searchNameHB | sam |
@@ -42,7 +42,7 @@ Feature: Bank Account Functionality
       | saveButton |
 
     Then Success Message should be displayed
-
+  @Regression
   Scenario: Delete Bank Account
     And User search item from Dialog
       | searchNameHB | sam edit|

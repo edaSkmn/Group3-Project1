@@ -9,10 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 
 public class US3_4DataTableFieldsAndDTypes {
-
     LeftNav ln = new LeftNav();
-
     DialogContent dc = new DialogContent();
+
     @And("Click  on the element in LeftNav")
     public void clickOnTheElementInLeftNav(DataTable elemanlar) {
         List<String> listElemanlar = elemanlar.asList(String.class);

@@ -9,6 +9,7 @@ Feature: Add-Edit-Delete Position Categories
       | setUpThreeN         |
       | positionCategoriesN |
 
+  @Regression
   Scenario Outline:User should be able to Add Position Categories
     And Click on the element in the Dialog
       | addButton |
@@ -33,9 +34,10 @@ Feature: Add-Edit-Delete Position Categories
     Then Already exist message should be displayed
 
     Examples:
-      | name     |
+      | name    |
       | Group3! |
 
+  @Regression
   Scenario Outline:User should be able to Edit Position Categories
     And User sending the keys in Dialog content
       | searchNameInputN | <name> |
@@ -49,9 +51,10 @@ Feature: Add-Edit-Delete Position Categories
     Then Success Message should be displayed
 
     Examples:
-      | name     | name1       |
+      | name    | name1       |
       | Group3! | Group-3 New |
 
+  @Regression
   Scenario Outline:User should be able to Delete Position Categories
     And User sending the keys in Dialog content
       | searchNameInputN | <name> |

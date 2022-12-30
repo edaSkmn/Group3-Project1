@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LeftNav extends Parent {
-
     public LeftNav() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -40,15 +39,19 @@ public class LeftNav extends Parent {
 
     @FindBy(xpath="(//span[text()='Setup'])[3]")
     private WebElement setUpThreeN;
+
     @FindBy(xpath = "//span[text()='Position Categories']")
     private WebElement positionCategoriesN;
+
     @FindBy(xpath = "(//span[text()='Discounts'])[1]")
     private WebElement discountsN;
 
     @FindBy(xpath = "//span[text()='Nationalities']")
     private WebElement nationalities;
+
     @FindBy(xpath = "//span[@class='nav-link-title ng-tns-c252-9 ng-star-inserted']")
     private WebElement schoolSetup;
+
     @FindBy(xpath = "//span[normalize-space()='Departments']")
     private WebElement departments;
 
@@ -63,16 +66,18 @@ public class LeftNav extends Parent {
 
     @FindBy(xpath = "//span[text()='Positions']")
     private WebElement positionsF;
+
     @FindBy(xpath="(//span[text()='Setup'])[3]")
     private WebElement setUpThreeF;
+
     @FindBy(xpath = "//span[text()='Education']")
     private WebElement educationF;
+
     @FindBy(xpath = " (//span[text()='Setup'])[5]")
     private WebElement setUpF;
+
     @FindBy(xpath = "(//span[text()='Subject Categories'])[1]")
     private WebElement subjectCategoriesF;
-
-
 
     WebElement myElement;
 
@@ -88,7 +93,6 @@ public class LeftNav extends Parent {
             case "bankAccountsEs" : myElement=bankAccountsEs;break;
             case "attestationsEs" : myElement=attestationsEs;break;
             case "setUpThreeEs" : myElement=setUpThreeEs;break;
-
             case "setUpThreeN" : myElement=setUpThreeN;break;
             case "positionCategoriesN" : myElement=positionCategoriesN;break;
             case "discountsN" : myElement=discountsN;break;
@@ -103,7 +107,6 @@ public class LeftNav extends Parent {
             case "subjectCategoriesF" : myElement=subjectCategoriesF;break;
             case "setUpThreeF" : myElement=setUpThreeF;break;
             case "positionsF" : myElement=positionsF;break;
-
         }
 
         clickFunction(myElement);
